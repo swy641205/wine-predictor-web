@@ -1,0 +1,71 @@
+<!-- templates/form.html -->
+<html>
+<head>
+    <title>Wine Quality Predictor</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+    <div class="row justify-content-center">
+    <div class="col-md-6">
+    <div class="card">
+    <div class="card-header bg-primary text-white">Enter Wine Features:</div>
+    <div class="card-body">
+        <form onsubmit="submitForm(event)">
+
+            <div class="form-group">
+                <label for="fixed_acidity">Fixed Acidity:</label>
+                <input type="text" class="form-control" name="fixed_acidity" required>
+            </div>
+            <div class="form-group">
+                <label for="volatile_acidity">Volatile Acidity:</label>
+                <input type="text" class="form-control" name="volatile_acidity" required>
+            </div>
+            <div class="form-group">
+                <label for="residual_sugar">Residual Sugar:</label>
+                <input type="text" class="form-control" name="residual_sugar" required>
+            </div>
+            <div class="form-group">
+                <label for="free_sulfur_dioxide">Free Sulfur Dioxide:</label>
+                <input type="text" class="form-control" name="free_sulfur_dioxide" required>
+            </div>
+            <div class="form-group">
+                <label for="density">Density:</label>
+                <input type="text" class="form-control" name="density" required>
+            </div>
+            <div class="form-group">
+                <label for="pH">pH:</label>
+                <input type="text" class="form-control" name="pH" required>
+            </div>
+            <div class="form-group">
+                <label for="sulphates">Sulphates:</label>
+                <input type="text" class="form-control" name="sulphates" required>
+            </div>
+            <div class="form-group">
+                <label for="alcohol">Alcohol:</label>
+                <input type="text" class="form-control" name="alcohol" required>
+            </div>
+
+            <button type="submit" class="btn btn-success">Predict</button>
+            <button type="button" onclick="fetchRandomData()" class="btn btn-info ml-2">Load Random Data</button>
+        </form>
+        <div class="mt-4">
+            <h4>Predicted Quality: <span id="predicted-quality">{{ quality if quality else '' }}</span></h4>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- JS Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="/static/scripts.js"></script>
+
+</body>
+</html>
